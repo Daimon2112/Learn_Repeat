@@ -1,0 +1,9 @@
+/target/
+/test-output/
+/.idea/
+/.allure/
+/surefire-reports/
+/src/test/resources/downloads/
+/allure-results/
+/screenshots/
+*.iml
