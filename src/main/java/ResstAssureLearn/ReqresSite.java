@@ -1,7 +1,9 @@
 package ResstAssureLearn;
 
+import com.google.gson.JsonObject;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -144,6 +146,37 @@ public class ReqresSite {
                 .log().all()
                 .extract().response().jsonPath().getInt("id");
 
+    }
+
+
+//если мы хотим вытащить и использовать данные из запроса тогда мы будем распарсивать ответ
+    @Test
+    public void testParsingResponceBody(){
+        Response response =
+                RestAssured.given()
+                        .baseUri("https://reqres.in")
+                        .basePath("/api/users?page=2")
+                        .contentType(ContentType.JSON)
+                        .when()
+                        .get()
+                        .then()
+                        .log().everything()
+                        .statusCode(200)
+                        .extract().response();
+        Assert.assertEquals(response.getStatusCode(),200);
+
+//        JsonObject jsonResponse = response.getBody().as(JsonObject.class);
+//        String firstName = jsonResponse.get("data[0].first_name").getAsString();
+//        String lastName = jsonResponse.get("data[0].last_name").getAsString();
+//        System.out.println("First Name: " + firstName);
+//        System.out.println("Last Name: " + lastName);
+
+        String userlastname= response.jsonPath().get("data[2].last_name").toString();
+    }
+
+    @Test
+    public void testParsingXMLResponse(){
+        
     }
 
 
