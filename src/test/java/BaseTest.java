@@ -1,13 +1,7 @@
-import Classic.Browser;
-import Classic.ConfigReader;
-import Classic.LoginPageOrange;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import classic.Browser;
+import classic.ConfigReader;
+import classic.LoginPageOrange;
 import org.testng.annotations.*;
-
-import java.lang.module.Configuration;
 
 public class BaseTest {
     protected LoginPageOrange loginPageOrange = new LoginPageOrange();

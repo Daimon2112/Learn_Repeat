@@ -1,11 +1,9 @@
-import Classic.ConfigReader;
-import Classic.LoginPageOrange;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-import static Classic.ConfigReader.*;
+import static classic.ConfigReader.*;
 
 public class TestSome extends BaseTest {
 

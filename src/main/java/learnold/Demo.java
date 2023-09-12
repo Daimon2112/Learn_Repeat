@@ -1,11 +1,5 @@
 package learnold;
 
-import AbsIntrCla.RunClasses;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-
-import java.util.ArrayList;
-
 public class Demo {
     public static void main(String[] args) {
         //ChromeOptions chromeOptions = new ChromeOptions();//работает ли при вебдрайвере манаджере
