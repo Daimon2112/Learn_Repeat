@@ -1,25 +1,12 @@
-package palywriteTest;
+package playwriteTest;
 
 
-import com.microsoft.playwright.Page;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import playwrite.pageObject.Browsers;
-import playwrite.pageObject.MainPage;
 
-public class MainPageTest {
+public class MainPageTest extends BasePlaywriteTest {
 
-    Browsers br;
-    Page page;
 
-    MainPage mainPage;
-
-    @BeforeTest
-    public void setup(){
-        br = new Browsers();
-        page = br.initBrowser("chromium");
-        mainPage = new MainPage(page);
-    }
 
     @Test
     public void firstTest(){
@@ -41,8 +28,4 @@ public class MainPageTest {
         Assert.assertEquals(actualSearch, "Search - " +productName);
     }
 
-    @AfterTest
-    public void finish(){
-        page.context().browser().close();
-    }
 }
