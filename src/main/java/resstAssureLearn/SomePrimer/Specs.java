@@ -1,5 +1,6 @@
 package resstAssureLearn.SomePrimer;
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -17,6 +18,7 @@ public class Specs {
                 .setBasePath(basePath)
                 .setContentType(ContentType.JSON)//zahardkodili
                 .log(LogDetail.ALL)
+                .addFilter(new AllureRestAssured())
                 .build();
     }
 
